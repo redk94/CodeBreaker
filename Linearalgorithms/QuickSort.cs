@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Linearalgorithms
+namespace Algorithms.Sort
 {
     /*
     initial call to QuickSort(list, 0, list.length-1)
@@ -57,7 +57,7 @@ namespace Linearalgorithms
 
             for (int i = low; i <= high - 1; i++)
             {
-                if ((order == eOrderBy.Asc && numbers[i] <= pivot ) || (order == eOrderBy.Desc && numbers[i] >= pivot))
+                if ((order == eOrderBy.Asc && numbers[i] <= pivot) || (order == eOrderBy.Desc && numbers[i] >= pivot))
                 {
                     Swap(numbers, PoS, i);
                     PoS++;
@@ -77,12 +77,13 @@ namespace Linearalgorithms
 
         private int PartitionTemp(int[] numbers, int low, int high, eOrderBy order)
         {
-            if (order == eOrderBy.Asc)
-            {
-                int pivot = numbers[high];
-                int PoS = low; //place for swaping
 
-                for (int i = low; i <= high - 1; i++)
+            int pivot = numbers[high];
+            int PoS = low; //place for swaping
+
+            for (int i = low; i <= high - 1; i++)
+            {
+                if (order == eOrderBy.Asc)
                 {
                     if (numbers[i] <= pivot)
                     {
@@ -90,16 +91,7 @@ namespace Linearalgorithms
                         PoS++;
                     }
                 }
-
-                Swap(numbers, PoS, high);
-                return PoS;
-            }
-            else
-            {
-                int pivot = numbers[high];
-                int PoS = low; //place for swaping
-
-                for (int i = low; i <= high - 1; i++)
+                else
                 {
                     if (numbers[i] >= pivot)
                     {
@@ -107,10 +99,10 @@ namespace Linearalgorithms
                         PoS++;
                     }
                 }
-
-                Swap(numbers, PoS, high);
-                return PoS;
             }
+
+            Swap(numbers, PoS, high);
+            return PoS;
         }
     }
 }

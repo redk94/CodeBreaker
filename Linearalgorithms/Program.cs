@@ -1,10 +1,9 @@
 ﻿using System;
 
-namespace Linearalgorithms
+namespace Algorithms.Sort
 {
     class Program
     {
-        
         static void Main(string[] args)
         {
             const int sizeOfArray = 10;

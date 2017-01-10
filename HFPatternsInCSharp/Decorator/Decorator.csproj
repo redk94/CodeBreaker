@@ -61,9 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Decorator.cs" />
+    <Compile Include="Beverage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShapeDemo\DecoratorPatternDemo.cs" />
+    <Compile Include="ShapeDemo\Shape.cs" />
+    <Compile Include="ShapeDemo\ShapeDecorator.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
